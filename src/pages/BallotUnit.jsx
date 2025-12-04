@@ -8,7 +8,7 @@ export default function BallotUnit() {
 
   const handleVote = (candidateNumber) => {
     // Play beep sound
-    const beepSound = new Audio('/beepsound.mp3');
+    const beepSound = new Audio('https://winward-evm.web.app/assets/beepSound--rqVG62k.mp3');
     beepSound.play().catch(error => console.log("Audio play failed:", error));
     
     setPressedButton(candidateNumber);
