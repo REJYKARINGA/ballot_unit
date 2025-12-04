@@ -52,17 +52,17 @@ export default function BallotUnit() {
   // If showSuccess is true, render the loader page
   if (showSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white p-5 flex justify-center items-center">
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white p-4 sm:p-5 flex justify-center items-center">
         <div className="w-full max-w-3xl text-center">
-          <div className="flex justify-center mb-6">
-            <div className="w-32 h-32 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
-              <span className="text-white text-6xl">✓</span>
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
+              <span className="text-white text-4xl sm:text-6xl">✓</span>
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Processing...</h2>
-          <p className="text-xl font-semibold text-blue-600 mb-1">Vote Successfully Completed</p>
-          <p className="text-lg text-gray-600">നിങ്ങളുടെ വോട്ട് വിജയകരമായി പൂർത്തീകരിച്ചു</p>
-          <p className="text-md text-gray-500 mt-4">Redirecting to dashboard...</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Processing...</h2>
+          <p className="text-lg sm:text-xl font-semibold text-blue-600 mb-1">Vote Successfully Completed</p>
+          <p className="text-base sm:text-lg text-gray-600">നിങ്ങളുടെ വോട്ട് വിജയകരമായി പൂർത്തീകരിച്ചു</p>
+          <p className="text-sm sm:text-md text-gray-500 mt-4">Redirecting to dashboard...</p>
         </div>
       </div>
     );
@@ -83,12 +83,12 @@ export default function BallotUnit() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex-grow bg-gradient-to-br from-gray-100 to-white p-5 flex justify-center items-center">
+      <div className="flex-grow bg-gradient-to-br from-gray-100 to-white p-3 sm:p-5 flex justify-center items-center">
         <div className="w-full max-w-3xl">
-          <div className="flex gap-2.5 mb-5">
+          <div className="flex gap-1.5 sm:gap-2.5 mb-3 sm:mb-5">
             <button
               onClick={() => setActiveTab('ward')}
-              className={`flex-1 py-3 text-center rounded-full font-bold cursor-pointer transition-all ${activeTab === 'ward'
+              className={`flex-1 py-2 sm:py-3 text-center rounded-full text-sm sm:text-base font-bold cursor-pointer transition-all ${activeTab === 'ward'
                 ? 'bg-black text-white opacity-100 shadow-lg'
                 : 'bg-black text-white opacity-40'
                 }`}
@@ -97,25 +97,25 @@ export default function BallotUnit() {
             </button>
             <button
               disabled
-              className="flex-1 py-3 text-center rounded-full font-bold cursor-not-allowed transition-all bg-pink-300 text-pink-900 opacity-40"
+              className="flex-1 py-2 sm:py-3 text-center rounded-full text-sm sm:text-base font-bold cursor-not-allowed transition-all bg-pink-300 text-pink-900 opacity-40"
             >
               Block
             </button>
             <button
               disabled
-              className="flex-1 py-3 text-center rounded-full font-bold cursor-not-allowed transition-all bg-blue-200 text-blue-800 opacity-40"
+              className="flex-1 py-2 sm:py-3 text-center rounded-full text-sm sm:text-base font-bold cursor-not-allowed transition-all bg-blue-200 text-blue-800 opacity-40"
             >
               District
             </button>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
-            <div className="flex justify-between items-center mb-8 pb-5 border-b-2 border-gray-200">
-              <div className="flex items-center gap-2.5 text-2xl font-bold text-black">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl">
+            <div className="flex justify-between items-center mb-4 sm:mb-8 pb-3 sm:pb-5 border-b-2 border-gray-200">
+              <div className="flex items-center gap-2 sm:gap-2.5 text-lg sm:text-2xl font-bold text-black">
                 <span>Ready</span>
-                <div className="w-5 h-5 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full animate-pulse"></div>
               </div>
-              <div className="text-2xl font-bold text-black">Ballot Unit 1</div>
+              <div className="text-lg sm:text-2xl font-bold text-black">Ballot Unit 1</div>
             </div>
             
 
@@ -123,27 +123,27 @@ export default function BallotUnit() {
               {candidates.map((candidate) => (
                 <div
                   key={candidate.number}
-                  className="flex items-center py-4 px-2.5 border-b-2 border-gray-200 hover:bg-gray-50 transition-colors"
+                  className="flex items-center py-3 sm:py-4 px-1 sm:px-2.5 border-b-2 border-gray-200 hover:bg-gray-50 transition-colors"
                 >
-                  <div className="w-12 text-xl font-bold text-gray-500">
+                  <div className="w-8 sm:w-12 text-base sm:text-xl font-bold text-gray-500">
                     {candidate.number}
                   </div>
-                  <div className="flex-1 flex items-center gap-4 text-xl font-semibold text-black">
+                  <div className="flex-1 flex items-center gap-2 sm:gap-4 text-sm sm:text-xl font-semibold text-black overflow-hidden">
                     {(candidate.name || candidate.symbol) && (
                       <>
                         {candidate.name && (
-                          <span>{candidate.name}</span>
+                          <span className="truncate">{candidate.name}</span>
                         )}
                         {candidate.symbol && (
-                          <span className="text-3xl">{candidate.symbol}</span>
+                          <span className="text-xl sm:text-3xl flex-shrink-0">{candidate.symbol}</span>
                         )}
                       </>
                     )}
                   </div>
-                  <div className="flex gap-4 items-center">
+                  <div className="flex gap-2 sm:gap-4 items-center flex-shrink-0">
                     {/* Red Light - Blinks when selected */}
                     <div
-                      className={`w-9 h-9 rounded-full border-none transition-all relative flex items-center justify-center ${
+                      className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full border-none transition-all relative flex items-center justify-center ${
                         selectedCandidate === candidate.number && isBlinking
                           ? 'bg-red-500 animate-pulse' 
                           : selectedCandidate === candidate.number
@@ -165,7 +165,7 @@ export default function BallotUnit() {
                     <button
                       onClick={candidate.name ? () => handleVote(candidate.number) : undefined}
                       disabled={!candidate.name || isBlinking}
-                      className={`w-24 h-10 rounded-lg border-none transition-all relative overflow-hidden flex items-center justify-center ${
+                      className={`w-16 h-8 sm:w-24 sm:h-10 rounded-lg border-none transition-all relative overflow-hidden flex items-center justify-center ${
                         candidate.name && !isBlinking ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'
                       } ${
                         selectedCandidate === candidate.number && !isBlinking
@@ -185,7 +185,7 @@ export default function BallotUnit() {
                       aria-label={`Vote for ${candidate.name || `Candidate ${candidate.number}`}`}
                     >
                       {selectedCandidate === candidate.number && !isBlinking && (
-                        <span className="text-white text-2xl font-extrabold animate-checkmark-pop">
+                        <span className="text-white text-xl sm:text-2xl font-extrabold animate-checkmark-pop">
                           ✓
                         </span>
                       )}
@@ -195,10 +195,10 @@ export default function BallotUnit() {
               ))}
               
               {/* Demo Disclaimer - Moved to Bottom */}
-              <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mt-6 rounded">
+              <div className="bg-yellow-100 border-l-4 border-yellow-500 p-3 sm:p-4 mt-4 sm:mt-6 rounded">
                 <div className="flex">
-                  <div className="ml-3">
-                    <p className="text-sm text-yellow-700">
+                  <div className="ml-2 sm:ml-3">
+                    <p className="text-xs sm:text-sm text-yellow-700">
                       <strong>Demo Only:</strong> This is a demonstration electronic voting machine. No actual votes are recorded. This system is for demonstration purposes only.
                     </p>
                   </div>
