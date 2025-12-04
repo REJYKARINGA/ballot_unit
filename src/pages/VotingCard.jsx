@@ -100,17 +100,6 @@ export default function VotingCard() {
             
             </div>
 
-            {/* Disclaimer */}
-            <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mt-6 rounded">
-              <div className="flex">
-                <div className="ml-3">
-                  <p className="text-sm text-yellow-700">
-                    <strong>Demo Only:</strong> This is a demonstration voting card. No actual votes are recorded. This system is for demonstration purposes only.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
             {/* Vote Again Button */}
             <div className="mt-6 text-center">
               <button 
