@@ -1,0 +1,684 @@
+/* Ashraf Page - Premium EVM Design */
+
+.ashraf-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ashraf-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ashraf-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.ashraf-header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.ashraf-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.ashraf-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Tabs */
+.ashraf-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.ashraf-tab {
+    flex: 1;
+    padding: 16px 12px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.5;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+}
+
+.ashraf-tab:hover {
+    transform: translateY(-3px);
+    opacity: 0.7;
+}
+
+.ashraf-tab.active {
+    opacity: 1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.ashraf-tab-ward {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    color: white;
+}
+
+.ashraf-tab-block {
+    background: linear-gradient(135deg, #fbb6ce 0%, #f687b3 100%);
+    color: #831843;
+}
+
+.ashraf-tab-district {
+    background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+    color: #1e40af;
+}
+
+.tab-label {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.tab-sublabel {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ballot Box */
+.ashraf-ballot-box {
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.ashraf-ballot-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Ballot Header */
+.ashraf-ballot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #f3f4f6;
+}
+
+.ashraf-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-text {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+}
+
+.status-indicator {
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+
+.ashraf-unit-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1f2937;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Candidates */
+.ashraf-candidates {
+    margin-bottom: 20px;
+}
+
+.ashraf-candidate-row {
+    display: flex;
+    align-items: center;
+    padding: 18px 12px;
+    border-bottom: 2px solid #f3f4f6;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.ashraf-candidate-row:hover {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ashraf-candidate-number {
+    width: 60px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #9ca3af;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ashraf-candidate-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ashraf-candidate-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.candidate-symbol {
+    font-size: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.candidate-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.2;
+}
+
+.party-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Button Group */
+.ashraf-button-group {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Red Light - Non-clickable indicator */
+.ashraf-red-light {
+    width: 45px;
+    height: 45px;
+    background: #991b1b;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ashraf-red-light .light-inner {
+    width: 20px;
+    height: 20px;
+    background: #991b1b;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Red Light Glowing State */
+.ashraf-red-light.glowing {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+    box-shadow:
+        0 0 20px rgba(220, 38, 38, 0.8),
+        0 0 40px rgba(220, 38, 38, 0.6),
+        0 0 60px rgba(220, 38, 38, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    animation: redGlow 1.5s ease-in-out infinite;
+}
+
+.ashraf-red-light.glowing .light-inner {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow:
+        0 0 15px rgba(239, 68, 68, 0.9),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Blue Button - Clickable */
+.ashraf-blue-button {
+    width: 100px;
+    height: 45px;
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        inset 0 3px 6px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ashraf-blue-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.ashraf-blue-button:hover {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 3px 6px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ashraf-blue-button:active,
+.ashraf-blue-button.pressed {
+    transform: translateY(1px);
+    box-shadow:
+        inset 0 4px 8px rgba(0, 0, 0, 0.5),
+        0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Blue Button Active State */
+.ashraf-blue-button.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow:
+        0 0 30px rgba(16, 185, 129, 0.8),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(16, 185, 129, 0.4);
+    animation: blueToGreen 0.5s ease-out;
+}
+
+.ashraf-blue-button.active::before {
+    left: 100%;
+}
+
+.ashraf-blue-button.active:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+}
+
+/* Disabled button styles */
+.ashraf-blue-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+}
+
+.ashraf-blue-button:disabled:hover {
+    transform: none;
+    box-shadow:
+        inset 0 3px 6px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.checkmark {
+    color: white;
+    font-size: 28px;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: checkmarkPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Footer */
+.ashraf-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #f3f4f6;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.footer-subtext {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Confirmation */
+.ashraf-confirmation {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px 30px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(16, 185, 129, 0.2);
+    animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    border-left: 4px solid #10b981;
+}
+
+.confirmation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.confirmation-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 900;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    animation: scaleIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.confirmation-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.confirmation-subtext {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.confirmation-candidate {
+    font-size: 14px;
+    font-weight: 600;
+    color: #10b981;
+    margin-top: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes redGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px rgba(220, 38, 38, 0.8),
+            0 0 40px rgba(220, 38, 38, 0.6),
+            0 0 60px rgba(220, 38, 38, 0.4),
+            inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgba(220, 38, 38, 1),
+            0 0 60px rgba(220, 38, 38, 0.8),
+            0 0 90px rgba(220, 38, 38, 0.6),
+            inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes blueToGreen {
+    0% {
+        background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    50% {
+        background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+        box-shadow:
+            0 0 40px rgba(16, 185, 129, 1),
+            inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        box-shadow:
+            0 0 30px rgba(16, 185, 129, 0.8),
+            inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    }
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ashraf-container {
+        padding: 15px;
+    }
+
+    .ashraf-title {
+        font-size: 24px;
+    }
+
+    .ashraf-subtitle {
+        font-size: 13px;
+    }
+
+    .ashraf-ballot-box {
+        padding: 20px;
+    }
+
+    .ashraf-candidate-number {
+        width: 40px;
+        font-size: 20px;
+    }
+
+    .candidate-symbol {
+        font-size: 30px;
+    }
+
+    .name-text {
+        font-size: 18px;
+    }
+
+    .party-text {
+        font-size: 12px;
+    }
+
+    .ashraf-red-light {
+        width: 38px;
+        height: 38px;
+    }
+
+    .ashraf-blue-button {
+        width: 80px;
+        height: 38px;
+    }
+
+    .checkmark {
+        font-size: 22px;
+    }
+
+    .ashraf-confirmation {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ashraf-tabs {
+        flex-direction: column;
+    }
+
+    .ashraf-tab {
+        padding: 12px;
+    }
+
+    .tab-label {
+        font-size: 16px;
+    }
+
+    .ashraf-ballot-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
