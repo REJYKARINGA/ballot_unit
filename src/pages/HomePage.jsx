@@ -64,7 +64,7 @@ export default function HomePage() {
                                 Full Stack Development with React, Laravel & Node.js
                             </p>
                             <div className="mt-4 text-purple-600 font-bold text-sm">
-                                Available for Projects
+                                Contact for create your ward member
                             </div>
                         </div>
                     </div>
