@@ -132,7 +132,7 @@ export default function BallotUnit() {
                     {(candidate.name || candidate.symbol) && (
                       <>
                         {candidate.name && (
-                          <span className="truncate">{candidate.name}</span>
+                          <span className="line-clamp-2">{candidate.name}</span>
                         )}
                         {candidate.symbol && (
                           <span className="text-xl sm:text-3xl flex-shrink-0">{candidate.symbol}</span>
