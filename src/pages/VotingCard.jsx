@@ -11,7 +11,7 @@ export default function VotingCard() {
     // Show modal after 5 seconds
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, []);
